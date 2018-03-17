@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+    <title>Exam</title>
+</head>
+
+<body>
+    
+    <div class="container">
+        <h1>Exam</h1>
+        <div class="row">
+                <div class="col-lg-4 col-lg-offset-4" style="text-align:center; margin:10px 0">
+                    <input type="search" id="search"  class="form-control" placeholder="Search">
+                    <button id="btn-search">Search</button>
+                </div>
+        </div>
+        <div class="row" style="text-align:center; margin:10px 0">
+            <div class="col-5">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text label-dark" for="sort">Sort By</label>
+                    </div>
+                    <select class="custom-select" id="sort">
+                        <option selected>Sort</option>
+                        <option value="2">Band Name</option>
+                        <option value="5">Number of Albums</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Row Number</th>
+                    <th>Band</th>
+                    <th>Tags</th>
+                    <th>Active</th>
+                    <th>Members</th>
+                    <th>Number of Albums</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-dark btn-lg btn-block" id="pull">Get Data</button>
+   </div>
+    
+   <script
+   src="https://code.jquery.com/jquery-3.3.1.min.js"
+   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+   crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
