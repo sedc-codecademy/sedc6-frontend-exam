@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <button type="button" class="btn btn-primary btn-lg btn-block" id="bandList">Show bands</button>
+    <button type="button" class="btn btn-secondary btn-lg btn-block" id="moreInfo">More Info</button> -->
+    <div class="container" id="bandsTable">
+        <div class="row">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Band Name</th>
+                        <th scope="col">Active</th>
+                        <th scope="col">Tags</th>
+                        <th scope="col">Band Members</th>
+                        <th scope="col">Number of Albums</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                <div class="row justify-content-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="col-4 mb-3">
+                                    <label for="selBand">Band Tags:</label>
+                                    <select class="form-control" id="selectBandTag">
+                                    </select>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <label>
+                                                <input type="checkbox" id="activeBands">Check for Active Bands:
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="">Search by band name</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="searchBar">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#">Previous</a>
+                            </li>
+                            <li class="mr-3 ml-3"></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </table>
+        </div>
+    </div>
+    <!-- <div class="container" id="moreInfo">
+        <div class="row">
+            <div class="col-4 mb-3">
+                <label for="selBand">Band Tags:</label>
+                <select class="form-control" id="selectBand">
+                            </select>
+            </div>
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Band Name</th>
+                        <th scope="col">Active</th>
+                        <th scope="col">Tags</th>
+                        <th scope="col">Band Members</th>
+                        <th scope="col">List Of Past Members</th>
+                        <th scope="col">Album Summary</th>
+                        <th scope="col">Years Active</th>
+                        <th scope="col">List of Albums</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+        </div>
+    </div> -->
+    <script src="script/jquery.min.js"></script>
+    <script src="script/script.js"></script>
+</body>
+
+</html>
