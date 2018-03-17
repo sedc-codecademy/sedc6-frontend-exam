@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse bg-inverse">
+    <a class="navbar-brand" href="#">Popular Bands</a>
+</nav>
+        
+<div class="container">
+        <form>
+                <div class="row">
+                  <div class="col">
+                    <input type="text" class="form-control" id="searchBandsByName" placeholder="Search bands by name!">
+                  </div>
+        </form> 
+
+  
+    <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="checkForActiveBands" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                  Show only active bands!
+                </label>
+    </div>
+    
+    
+    <div class="form-group col-2">
+            <label for="exampleFormControlSelect1"></label>
+            <select class="form-control" id="sortByGenre">
+              <option selected>Choose bands by genre!</option>
+              <option value="thrash metal">Thrash Metal</option>
+              <option value = "metal">Metal</option>
+              <option value="heavy metal">Heavy Metal</option>
+              <option value="hard rock">Hard Rock</option>
+              <option value="rock">Rock</option>
+              <option value="speed metal">Speed Metal</option>
+              <option value="german">German</option>
+              <option value="nu metal">Nu Metal</option>
+              <option value="alternative metal">Alternative Metal</option>
+              <option value="hard rock">Hard Rock</option>
+              <option value="alternative rock">Alternative Rock</option>
+              <option value="political">Political</option>
+              <option value="rapcore">Rapcore</option>
+              <option value="grunge">Grunge</option>
+              <option value="alternative">Alternative</option>
+              
+        </select>
+    </div>
+<table class="table">
+<thead class="thead-dark">
+<tr>
+    <th scope="col">No.</th>
+    <th scope="col" id="nameOfTheBand">Band (Click!)</th>
+    <th scope="col">Active</th>
+    <th scope="col">Tags</th>
+    <th scope="col">Members</th>
+    <th scope="col" id="NoOfAlbums">Albums (Click!)</th>
+    </tr>
+    </thead>
+    <tbody id="containerOfBands">
+        
+</tbody>
+</table>
+
+</div>
+    '
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+<script src="script.js"></script>
+
+</body>
+</html>
