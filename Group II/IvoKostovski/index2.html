@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ivo Kostovski - G2</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="container">
+        <h1><a href="index.html" style="text-transform: none; color: black; text-decoration: none;">List of bands</a></h1>
+        <h1><a href="index2.html" style="text-transform: none; color: black; text-decoration: none;">Choose band</a></h1>
+        <div class="row" style="text-align:center; margin:10px 0">
+                    
+                    <div class="col-4">
+                        <select id="band-select">
+                            <option selected>Choose band...</option>
+                            <option>Metallica</option>
+                            <option>Megadeth</option>
+                            <option>Slayer</option>
+                            <option>Athrax</option>
+                            <option>Kreator</option>
+                            <option>Slipknot</option>
+                            <option>Stone Sour</option>
+                            <option>Rage Against the Machine</option>
+                            <option>Guns N' Roses</option>
+                            <option>Soundgarden</option>
+                            <option>Nirvana</option>
+                            <option>Foo Fighters</option>
+                            <option>Velvet Revolver</option>
+                            <option>Stone Temple Pilots</option>
+                            <option>Pearl Jam</option>
+                            <option>Temple of the Dog</option>
+                            <option>Alice in Chains</option>
+                            <option>Audioslave</option>
+                        </select>
+                    </div>
+        </div>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>No.</th>
+                    <th id="sort-name">Name</th>
+                    <th>Past members</th>
+                    <th>Album summary</th>
+                    <th>Years active</th>
+                    <th>Chronological list of albums</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-dark btn-lg btn-block" id="pull">Get Data</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="script/bootstrap.min.js" type="text/javascript"></script>
+    <script src="script/app.js" type="text/javascript"></script>
+</body>
+
+</html>
