@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List of Bands</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <form class="search-form" id="search">
+        <h1>
+            <b>Search Bands:</b>
+        </h1>
+        <div class="input search">
+            <label for="search-name">Search:</label>
+            <input type="search" name="search-name"  id="search-name" placeholder="Band Name">
+
+        </div>
+        <div class="input tag">
+            <label for="">Search:</label>
+            <select name="" id="search-tag">
+                <option value="" disabled selected id="option-info">Tag(metal, rock etc.)</option>
+            </select>
+        </div>
+        <div class="input actve">
+            <label for="show-active" id="label-active">Active:</label>
+            <input type="checkbox" id="show-active" value="">
+        </div>
+        <div class="button search-name">
+            <input type="button" id="search-btn" value="Search">
+        </div>
+        <div class="button clear">
+            <input type="button" onclick="clearForm()" id="clear-btn" value="Clear">
+        </div>
+    </form>
+
+    <table class="wrapper-list">
+        <div class="headline">
+            <h1>List of Bands</h1>
+        </div>
+        <thead>
+            <th>Row No.</th>
+            <th>Band Name</th>
+            <th>Active</th>
+            <th>Tags</th>
+            <th>Members</th>
+            <th>No. Albums</th>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+
+    <script src="js/dataScript.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
