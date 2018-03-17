@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="FrontEnd Final Exam March 17, 2018">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Bootswatch theme, jQuery">
+    <meta name="author" content="Dejan Krstev, G2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>uNF</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/cosmo/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<div class="header">
+    <h1>March 17, 2018 - FrontEnd Final</h1>
+</div>
+<br>
+
+<body>
+    <table>
+        <thead>
+            <th>
+                # &nbsp; &nbsp; &nbsp; &nbsp;
+            </th>
+            <th>
+                <a href="#" class="sorting-header" data-sort="name" data-direction="asc">Band</a>
+                <input type="text" name="search" id="search" placeholder="Search e.g. Audioslave" />
+            </th>
+            <th>
+                Active
+                <input type="checkbox" name="active" id="active" />
+            </th>
+            <th>
+                Tags &nbsp; &nbsp;
+                <select name="tags" id="tags"></select>
+            </th>
+            <th>
+                Members
+            </th>
+            <th>
+                <a href="#" class="sorting-header" data-sort="albums" data-direction="asc">Albums</a>
+            </th>
+        </thead>
+        <tbody id="bands"></tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6">
+                    <div id="pagination" style="text-align: center;">
+                        <a href="#" id="prev">&laquo;</a> Showing <span id="current_page"></span> of <span id="total_records"></span>
+                        <a href="#" id="next">&raquo;</a>
+                    </div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script/script.js"></script>
+</body>
+
+</html>
