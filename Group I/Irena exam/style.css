@@ -1,0 +1,13 @@
+body {
+    background-color: black;
+    color: #6CBDBD;
+    }
+
+    button{
+        height: 30px;
+        background-color: rgb(224, 22, 22);
+        border: 2px solid rgb(31, 204, 25);
+        color: white;
+        border-radius: 3px;
+        outline:none;
+    }
