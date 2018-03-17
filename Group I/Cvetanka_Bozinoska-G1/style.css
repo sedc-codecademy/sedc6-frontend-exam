@@ -1,47 +1,76 @@
+
+
 *{
     margin: 0px;
     padding: 0px;
-  
+    background: rgb(152, 188, 224);
+    color: black;
 } 
-table{
-    border: 5px solid black;
+body {
+      
+    background-color: lightgrey;
+    color: wheat;
 }
+.container{
+    background-color: lightgrey;
+    color: rgb(5, 5, 70);
+    margin: 10px;
+    padding: 10px; 
+    width: 100%;
+    height: 100%; 
+    border: 2px solid rgb(20, 20, 117);
+    position: relative;
+}
+
+.table{
+    background: pink;
+    padding: 0px;
+    margin: 0px;
+    width:100%;
+    height: 100%;
+    border:2px solid violet;
+}
+.table th{
+    border:2px solid violet;
+}
+button{
+    height: 30px;
+    background-color: rgb(25, 82, 204);
+    border: 2px solid rgb(25, 82, 204);
+    color: white;
+    border-radius: 3px;
+    outline:none;
+}
+
+
+::placeholder { 
+    color: #bebe35;
+}
+
 th{
-    border: 10px solid black;
-    width: 10vw;
+    height: 30px;
+    width: 100px;
 }
 td{
-    border: 5px solid black;
-    width: 10vw;
+    height: 30px;
+    width: 100px;
+}
+.td-kind{
+    width: 30px; 
+    text-align: center;
+    
 }
 
-.form{
-	display: inline-flex;
+td {
+    background-color: violet;
 }
 
-.save{
-    box-sizing: border-box; 
-    display: none;
-    height: 100%;
-    width:100%;  
-    background-color: #c2cf04;
-    border: 2px solid #c2cf04;
-    align-self: center;
+td:nth-child(odd) {
+    background-color: lightskyblue;
 }
-
-.del, .edit{
-    box-sizing: border-box;
-    display: inline-block; 
-  
-    background-color: #10b133;
-    border: 2px solid #10b133;
-    width: 50%;
-    height: 100%;
-    align-content: center;
+td:nth-child(8) {
+    width: 5%;
 }
-.del{
-    border: 2px solid #d62b2b;
-    background-color: #d62b2b;
-    width: 50%;
-    height: 100%;
+td:nth-child(9) {
+    width: 5%;
 }
