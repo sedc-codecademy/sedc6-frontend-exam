@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+}
+
+.navbar {
+    width: 100%;
+    height: 50px;
+    background-color: #2ecd71;
+    position:fixed;
+    top: 0;
+    left: 0;
+    margin-bottom: 50px;
+}
+
+.navbar__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 7px 0px 7px 0px;
+}
+
+.navbar__search {
+    border: none;
+    border-radius: 10px;
+    background-color: #3fde81;
+    width: 40%;
+    height: 36px;
+    font-size: 18px;
+    padding: 3px 5px 3px 5px;
+}
+
+.navbar__search:focus {
+    border: 1px solid #0cab50;
+    outline: 0;
+}
+
+main {
+    margin: auto;
+    margin-top: 50px;
+    background-color: #fff;
+}
+
+.data {
+    width: 100%;
+    height: auto;
+
+}
+
+.data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.data-table {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    box-sizing: border-box;
+}
+
+.data-table__row {
+    display: flex;
+    flex-direction: row;
+    min-height: 50px;
+    width: 100%;
+}
+
+.active::after {
+    color: green;
+    content: "•";
+    margin-right: 5px;
+    font-size: 40px;
+    line-height: 0px;
+}
+
+.inactive::after {
+    color: red;
+    content: "•";
+    margin-right: 5px;
+    font-size: 40px;
+    line-height: 0px;
+}
+
+.data-table__row--header {
+    background-color: #3fde81;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.data-table__column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    word-wrap: normal;
+    border: 1px solid #0cab50;
+    box-sizing: border-box;
+    overflow: auto;
+}
+.data-table__row--header .data-table__column {
+    border: none;
+}
+.data-table__row--header .data-table__column:nth-child(3) {
+    justify-content: center !important;
+}
+.data-table__row .data-table__column:nth-child(1) {
+    width: 5%;
+}
+.data-table__row .data-table__column:nth-child(2) {
+    width: 25%;
+}
+.data-table__row .data-table__column:nth-child(3) {
+    width: 30%;
+    justify-content: flex-start ;
+}
+.data-table__row .data-table__column:nth-child(4) {
+    width: 35%;
+}
+.data-table__row .data-table__column:nth-child(5) {
+    width: 10%;
+}
