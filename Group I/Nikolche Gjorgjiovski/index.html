@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Example JavaScript</title>
+        <link rel="stylesheet" href="css/css.css">
+    </head>
+    <body>
+
+        <button type="button" id="next">Next</button>
+        <button type="button" id="reviews">Previews</button>
+    
+        <select id="sortBy"> 
+            <option selected>Sort By</option>
+            <option value="1">Bands Name</option>
+            <option value="2">Number Of Albums</option>
+        </select>
+
+        <select id="listOfTags">
+                <option selected>List Of Tags</option>
+                <option value="1">Thrash Metal</option>
+                <option value="2">Metal</option>
+                <option value="3">heavy metal</option>
+                <option value="4">hard rock</option>
+                <option value="5">rock</option>
+                <option value="6">speed metal</option>
+                <option value="7">heavy metal</option>
+                <option value="8">german</option>
+                <option value="9">nu metal</option>
+                <option value="10">alternative metal</option>
+                <option value="11">alternative rock</option>
+                <option value="12">alternative</option>
+                <option value="13">political</option>
+                <option value="14">rapcore</option>
+                <option value="15">hair metal</option>
+            </select>
+
+        <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name Of The Band</th>
+                        <th>Band Active</th>
+                        <th>List Of Current Band Members</th>
+                        <th>Number Of Albums</th>
+                    </tr>
+                </thead>
+                <tbody id="myBody">
+        
+                </tbody>
+            </table>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="javaScript.js"></script>
+    </body>
+</html>
