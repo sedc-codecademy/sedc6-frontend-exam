@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="header">
+    <h4 class="title"><strong>{{ viewTitle }}</strong></h4>
+  </div>
+  <div class="content">
+    <div class="containerTable">
+      <div class="row" style="margin-bottom: 20px">
+        <mat-paginator #pagin
+                       [length]="dataLength"
+                       [pageSize]="pageSize"
+                       [pageSizeOptions]="[10, 15, 25, 100]"
+                       (page)="onChangePage($event)">
+        </mat-paginator>
+      </div>
+      <div class="row">
+        <form>
+          <div style="float: left">
+            <label>Search by: </label><br>
+            <mat-radio-group name="selectedData" (ngModelChange)="onSelectValue($event)" ngModel required>
+              <mat-radio-button value="name">Band</mat-radio-button>
+              <mat-radio-button value="tags">Tags</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="example-form">
+            <mat-form-field class="example-full-width">
+              <input
+                matInput
+                placeholder="Search"
+                type="text"
+                name="searchData"
+                ngModel
+                (keyup)="onKeyUpSearch($event)"
+              >
+            </mat-form-field>
+          </div>
+        </form>
+        <table class="table table-striped" >
+          <thead>
+          <tr>
+            <th>#</th>
+            <th><strong matTooltip="Sort by band" (click)="onSortData('name')" style="cursor: pointer">Band </strong></th>
+            <th><strong matTooltip="Sort by albums" (click)="onSortData('albums')" style="cursor: pointer">Album </strong></th>
+            <th>Members</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let band of data | slice:[countFrom]:[countTo]; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ band.name }}</td>
+            <td><span style="cursor: pointer" (click)="onClickAlbums(band)">{{ band.albums.length }}</span></td>
+            <td>{{ band.members | member }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+.btn {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  width: 220px;
+  height: 40px;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 400px;
+  width: 100%;
+  float: right;
+  /*margin-right: 15%;*/
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.center {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.example-header {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  font-size: 20px;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+
+.containerTable {
+  margin: 36px 10px 0 10px;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+small {
+  color: #cdcdcd;
+}
+
+/deep/ .mat-tooltip {
+  /*font-size: 14px;*/
+}
+
+.example-form-addEmployee {
+  min-width: 200px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.mat-column {
+  display: flex;
+  justify-content: flex-end;
+}
