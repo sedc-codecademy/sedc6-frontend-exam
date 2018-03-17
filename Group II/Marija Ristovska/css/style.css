@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 10px;
+}
+
+body {
+    font-size: 14px;
+    background: #f4f4f4;
+    line-height: 1.5em;
+    margin: 0 auto;
+    width: 100%;
+    background: lavender;
+}
+
+
+table {
+    margin: 0 auto;
+    width: 100%;
+}
+ 
+h1 {
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    background-color: black;
+    color: gray;
+}
+
+h3{
+    text-align: center;
+}
