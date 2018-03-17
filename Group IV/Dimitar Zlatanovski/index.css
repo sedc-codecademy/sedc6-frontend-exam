@@ -1,0 +1,26 @@
+a{
+    text-decoration: underline;
+    color: white;
+}
+a:hover{
+    color: white;
+}
+.biggerFont{
+    font-size: 1.3em;
+}
+
+.blueA{
+    color:blue;
+    margin-right: 7px;
+}
+
+.blueA:hover{
+    color:blue;
+}
+
+.activeSort{
+    color:green;
+}
+.activeSort:hover{
+    color:green;
+}
