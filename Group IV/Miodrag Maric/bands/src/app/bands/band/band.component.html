@@ -1,0 +1,18 @@
+<table class="table table-striped" >
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Album</th>
+    <th>Year</th>
+    <th>Type</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let album of dataAlbum; let i = index">
+    <td>{{ i + 1 }}</td>
+    <td>{{ album.name }}</td>
+    <td>{{ album.year }}</td>
+    <td>{{ album.type }}</td>
+  </tr>
+  </tbody>
+</table>
