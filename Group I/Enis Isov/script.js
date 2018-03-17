@@ -1,7 +1,7 @@
 let myBooks = [];
 
 
-localStorage.removeItem(["mybooks"]);
+localStorage.removeItem(["mybands"]);
 
 if(localStorage["myBands"])
 {
@@ -14,7 +14,7 @@ else{
     getData();
 }
 
-makeTable(myBooks);
+makeTable(myBands);
 
 function getData(){
     $.ajax({
@@ -27,8 +27,8 @@ function getData(){
         }
         
         localStorage["myBands"] = JSON.stringify(data);
-        myBooks = JSON.parse(localStorage["myBands"]);
-        console.log(myBooks);
+        myBands = JSON.parse(localStorage["myBands"]);
+        console.log(myBands);
       
 
         },
