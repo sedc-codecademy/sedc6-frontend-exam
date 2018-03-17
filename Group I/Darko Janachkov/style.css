@@ -1,0 +1,73 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body {
+background-color: black;
+color: white;
+}
+
+button{
+    height: 30px;
+    background-color: rgb(25, 82, 204);
+    border: 2px solid rgb(25, 82, 204);
+    color: white;
+    border-radius: 3px;
+    outline:none;
+}
+input{
+        display: block;
+        margin: 2px;
+        border: 2px solid #ac7b11;
+        background-color: rgba(44, 42, 42, 0.863);
+        color: #bebe35;
+    
+    }
+::placeholder { 
+    color: #bebe35;
+}
+th{
+    height: 30px;
+    width: 100px;
+}
+td{
+    height: 30px;
+    width: 100px;
+}
+.td-kind{
+    width: 30px; 
+    text-align: center;
+}
+
+td {
+    background-color: #864408;
+}
+
+td:nth-child(odd) {
+    background-color: #836d79;
+}
+
+
+}
+#Get_Data{
+    transition: color 5s, background 5s;
+}
+#Get_Data:hover{
+    background: yellow;
+   color: black;
+}
+
+
+}
+
+td input{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    margin:0px;
+
+}
+
+
+
