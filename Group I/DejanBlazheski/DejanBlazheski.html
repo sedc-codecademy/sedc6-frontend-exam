@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dejan Blazheski</title>
+    <link rel="stylesheet" href="DejanBlazheski.css">
+</head>
+<body>
+    <label for="search">Search</label>
+    <input type="text" id="searchFilter">
+    <select id="tags">
+        <!-- <option value="">None</option> -->
+    </select>
+    <label for="isActive">Show only active</label>
+    <input type="checkbox" name="isActive" id="isActive">
+    <button id="prevBtn">Prev</button>
+    <button id="nextBtn">Next</button>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Row
+                </th>
+                <th id="sortName">
+                    Name
+                </th>
+                <th>
+                    Is Active
+                </th>
+                <th>
+                    Tags
+                </th>
+                <th>
+                    Members
+                </th>
+                <th id="sortAlbums">
+                    Albums
+                </th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+
+        </tbody>
+    </table>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="DejanBlazheski.js"></script>
+</body>
+</html>
