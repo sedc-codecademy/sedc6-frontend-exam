@@ -51,7 +51,7 @@ $(document).ready(() => {
         proccessData(bands, page, maxElements);
     });
 
-    $("#searchFilter, #tags, #onlyActive").on("change", () => {
+    $("#searchFilter, #tags, #onlyActive, #showAll").on("change", () => {
         proccessData(bands, page, maxElements);
     });
 
@@ -79,7 +79,18 @@ function proccessData(data, page, maxElements){
     filteredBands = sortData(filteredBands);
 
     let maxPage = Math.ceil(filteredBands.length / maxElements);
-    let lastElementFromPage = page === maxPage ? filteredBands.length : maxElements * page;
+    if(filteredBands.length < (page - 1) * maxElements)
+        page = maxPage;
+
+    let lastElementFromPage;
+
+    if($("#showAll").is(":checked")){
+        lastElementFromPage = filteredBands.length;
+        page = 1;
+    }
+    else{
+        lastElementFromPage = page === maxPage ? filteredBands.length : maxElements * page;
+    }
 
     for(let i = maxElements * (page - 1); i < lastElementFromPage; i += 1){
         populateTable(filteredBands[i], i + 1);
