@@ -1,9 +1,34 @@
 let bands = [];
-let tempBands = [];
+let tags = [];
+let filteredBands = [];
+let sortBy = "";
+
 let page = 1;
 let maxElements = 10;
-let sortBy = "";
-let tagsArr = [];
+
+$.ajax({
+    method: "GET",
+    url: "https://raw.githubusercontent.com/sedc-codecademy/sedc6-frontend-exam/master/band-data.json",
+    success: (data) => {
+        bands = JSON.parse(data);
+
+        bands.forEach(band => {
+            tags = [...tags, ...band.tags];
+        });
+        tags = Array.from(new Set(tags));
+
+        for(let i = 0; i < tags.length; i += 1){
+            $("#tags").append(`
+                <option value="${tags[i]}">${tags[i]}</option>
+            `);
+        }
+
+        proccessData(bands, page, maxElements)
+    },
+    error: (err) => {
+        console.log(err);
+    }
+});
 
 $(document).ready(() => {
     $("#sortName").on("click", () => {
@@ -15,95 +40,83 @@ $(document).ready(() => {
         }
         proccessData(bands, page, maxElements);
     });
+
     $("#sortAlbums").on("click", () => {
-        if(sortBy === "albumsAsc"){
-            sortBy = "albumsDes"
-        }
-        else{
+        if(sortBy === "albumsDes"){
             sortBy = "albumsAsc"
         }
+        else{
+            sortBy = "albumsDes"
+        }
         proccessData(bands, page, maxElements);
     });
-    $("#searchFilter, #isActive, #tags").on("change", () => {
+
+    $("#searchFilter, #tags, #onlyActive").on("change", () => {
         proccessData(bands, page, maxElements);
     });
+
     $("#prevBtn").on("click", () => {
         if(page > 1){
             page -= 1;
         }
         proccessData(bands, page, maxElements);
     });
+
     $("#nextBtn").on("click", () => {
-        if(page < Math.ceil(tempBands.length / maxElements)){
+        if(page < Math.ceil(filteredBands.length / maxElements)){
             page += 1;
         }
         proccessData(bands, page, maxElements);
     });
 });
 
-$.ajax({
-    method: "GET",
-    url: "https://raw.githubusercontent.com/sedc-codecademy/sedc6-frontend-exam/master/band-data.json",
-    success: (data) => {
-        bands = JSON.parse(data);
-        tempBands = bands;
-
-        for(let i = 0; i < bands.length; i += 1){
-            for(let j = 0; j < bands[i].tags.length; j += 1){
-                tagsArr.push(bands[i].tags[j]);
-            }
-        }
-        tagsArr = Array.from(new Set(tagsArr));
-        for(let i = 0; i < tagsArr.length; i += 1){
-            $("#tags").append(`
-                <option value="${tagsArr[i]}">${tagsArr[i]}</option>
-            `);
-        }
-        proccessData(bands, page, maxElements)
-    },
-    error: (err) => {
-        console.log(err);
-    }
-});
-
 
 
 function proccessData(data, page, maxElements){
     $("#myTable").html("");
-    filterData(data);
-    tempBands = sortData(tempBands);
-    let maxPage = Math.ceil(tempBands.length / maxElements);
-    let elementsCount = maxPage === page ? tempBands.length : maxElements;
 
-    for(let i = (page - 1) * maxElements; i < elementsCount; i += 1){
-        populateTable(tempBands[i], i + 1);
+    filteredBands = filterData(data);
+    filteredBands = sortData(filteredBands);
+
+    let maxPage = Math.ceil(filteredBands.length / maxElements);
+    let lastElementFromPage = page === maxPage ? filteredBands.length : maxElements * page;
+
+    for(let i = maxElements * (page - 1); i < lastElementFromPage; i += 1){
+        populateTable(filteredBands[i], i + 1);
     }
 }
 
 function filterData(data){
-    tempBands = data.filter(item => item.name.toLowerCase().includes($("#searchFilter").val().toLowerCase()));
-    let selectedTag = $("#tags").find(":selected").text();
-    console.log(selectedTag);
-    tempBands = tempBands.filter(item => item.tags.includes(selectedTag));
-    console.log(tempBands);
-    if($("#isActive").is(":checked")){
-        tempBands = tempBands.filter(item => item.active === true);
+    let searchKey = $("#searchFilter").val().toLowerCase();
+    data = data.filter(item => item.name.toLowerCase().includes(searchKey));
+
+    let selectedTag = $("#tags").find(":selected").val();
+    if(selectedTag !== "")
+        data = data.filter(item => item.tags.includes(selectedTag));
+
+    if($("#onlyActive").is(":checked")){
+        data = data.filter(item => item.active);
     }
+    return data;
 }
 
 function sortData(data){
     switch(sortBy){
         case "nameAsc":
             data.sort((a, b) => a.name.localeCompare(b.name));
+            $("#sortInfo").text("Sorted by: Name; Type: Ascending");
             break;
         case "nameDes":
             data.sort((a, b) => b.name.localeCompare(a.name));
+            $("#sortInfo").text("Sorted by: Name; Type: Descending");
             break;
         case "albumsAsc":
             data.sort((a, b) => a.albums.length - b.albums.length);
+            $("#sortInfo").text("Sorted by: Albums; Type: Ascending");
             break;
         case "albumsDes":
             data.sort((a, b) => b.albums.length - a.albums.length);
+            $("#sortInfo").text("Sorted by: Albums; Type: Descending");
             break;
         default:
             break;
@@ -111,27 +124,31 @@ function sortData(data){
     return data;
 }
 
-function populateTable(data, id){
-    let tags = "";
-    let members = "";
-    for(let i = 0; i < data.tags.length; i += 1){
-        tags += `${data.tags[i]}, `;
-    }
-    for(let i = 0; i < data.members.length; i += 1){
-        if(data.members[i].former){
+function populateTable(band, id){
+    let bandTags = "";
+    let bandMembers = "";
+    
+    band.tags.forEach((tag) => {
+        bandTags += `${tag}, `;
+    });
+
+    band.members.forEach((member) => {
+        if(member.former){
+            //nothing
         }
         else{
-            members += `${data.members[i].name}</br>`;
+            bandMembers += `${member.name}</br>`;
         }
-    }
+    });
+
     $("#myTable").append(`
         <tr>
             <td>${id}</td>
-            <td>${data.name}</td>
-            <td>${data.active}</td>
-            <td>${tags}</td>
-            <td>${members}</td>
-            <td>${data.albums.length}</td>
+            <td>${band.name}</td>
+            <td>${band.active}</td>
+            <td>${bandTags}</td>
+            <td>${bandMembers}</td>
+            <td>${band.albums.length}</td>
         </tr>
     `);
 }

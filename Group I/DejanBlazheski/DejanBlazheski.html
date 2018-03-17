@@ -8,15 +8,21 @@
     <link rel="stylesheet" href="DejanBlazheski.css">
 </head>
 <body>
-    <label for="search">Search</label>
+    <label for="searchFilter">Search</label>
     <input type="text" id="searchFilter">
+
     <select id="tags">
-        <!-- <option value="">None</option> -->
+        <option value="">None</option>
     </select>
-    <label for="isActive">Show only active</label>
-    <input type="checkbox" name="isActive" id="isActive">
+
+    <label for="onlyActive">Show only active</label>
+    <input type="checkbox" name="onlyActive" id="onlyActive">
+
     <button id="prevBtn">Prev</button>
     <button id="nextBtn">Next</button>
+
+    <p id="sortInfo">Sorted by: Unsorted</p>
+
     <table>
         <thead>
             <tr>
