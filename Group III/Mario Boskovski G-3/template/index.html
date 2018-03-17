@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Template</title>
+
+</head>
+
+<body>
+
+        <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown button
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#" id="thrashMetal">Thrash metal</a>
+                  <a class="dropdown-item" href="#">Metal</a>
+                  <a class="dropdown-item" href="#">Rock</a>
+                </div>
+              </div>
+
+    <table class="albumsTable" id="tableBands">
+        <tr id="albumsRow">
+            <input type="text" name="text"  id="bandNameInput" name="bandName" placeholder="Enter a album name">
+            <button id="searchBtn" type="submit">Search</button>
+            <th>Number</th>
+            <th id="nameOfTheBand">
+                <button id="bandNameBtn">Name of the Band</button>
+            </th>
+
+            
+            <th>Band Active</th>
+            <th>Tags</th>
+            <th>
+                <button id="albumNumberBtn">Total Number of albums</button>
+            </th>
+            <th>Active Members</th>
+
+        </tr>
+    </table>
+<br>
+    <table class="albumsTableOne">
+            <tr id="albumsRoOne">
+                
+                <th>Number</th>
+                <th id="nameOfTheBandOne">
+                    <button id="bandNameBtnOne">Name of the Band</button>
+                </th>
+    
+                
+                <th>Band Active</th>
+                <th>Tags</th>
+                <th>
+                    <button id="albumNumberBtnOne">Total Number of albums</button>
+                </th>
+                <th>Active Members</th>
+    
+            </tr>
+        </table>
+    
+        
+
+        <table id="searchResult">
+            <th>Name of Band</th>
+            <td></tr>
+        </table>
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
