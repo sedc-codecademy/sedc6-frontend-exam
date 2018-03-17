@@ -10,46 +10,46 @@
     <title>List Bands</title>
 </head>
 <body>
-  
+   <div class="col-md-3 mb-3">
     <label for="search">Search</label>
-    <input type="text" id="searchFilter">
+    <input type="text" id="srcFilter">
+    
     <select id="tags">
-        
+        <option value="All">All</option>
     </select>
-    <label for="active">Show only active</label>
-    <input type="checkbox" name="active" id="active">
+    </div>
+
+    <div class="col-md-3 mb-3">
+    <label for="isActive">Show Active</label>
+    <input type="checkbox" name="isActive" id="isActive">
+    <br>
+	<label id = "currentPage"></label>
+
+
+    <div class="col-md-3 mb-3" class="btn btn-primary">
     <button id="prev">Prev</button>
     <button id="next">Next</button>
-    </select>
-            
-            
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th id="sortName">NAME</th>
+                <th>VISUAL</th>
+                <th>TAGS</th>
+                <th>MEMBERS</th>
+                <th id="sortAlbums">ALBUMS</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+
+        </tbody>
+    </table>
     
-        <table class="table" id="sort">
-                <thead id="th">
-                      <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col" id="sortName">Band Name</th>
-                        <th scope="col">Visual</th>
-                        <th scope="col">List of Tags</th>
-                        <th scope="col">Mambers</th>
-                        <th scope="col" id="sortAlbums" >Albums</th>
-                      </tr>
-                </thead>
-                
-                     
-                
-                    
-           
-            <tbody id="myBody">
-                
-            </tbody>
-        </table>
-
-        
-        
-
-
-    <script src=https://code.jquery.com/jquery-3.3.1.min.js></script>
-    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="CvetankaBozhinoska.js"></script>
+   
 </body>
 </html>
