@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Front End Exam </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/cosmo/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    
+</head>
+<body>
+    <div class="header">
+        <h1>List of Bands</h1>
+        <h3>Hello there! Let's play with the bands a little bit.</h3>
+    </div>
+    <div class="col-12">
+        <ul class="pagination justify-content-center pagination-sm">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+          </ul>
+    </div>
+  <div class="col-12">
+    <table class="table" border ="1px">
+        <thead class="thead-dark justify-content-center">
+            <th>Row Number</th>
+            <th> <a href="#" class="sorting-header" data-sort="name" data-direction="asc">Band</a><input type="text" name="search" id="search" /></th>
+            <th> Active Status <input type="checkbox" name="active" id="active" /></th>
+            <th> Tags <select name="tags" id="tags"></select></th>
+            <th> Band Members </th>
+            <th><a href="#" class="sorting-header" data-sort="albums" data-direction="asc">Total Number of Albums</a> </th>
+        </thead>
+        <tbody id="bands"></tbody>
+    </table>
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script/script.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>
