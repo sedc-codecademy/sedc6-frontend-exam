@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bands</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+    <style>
+    .btn.btn-dark.active{
+        background-color:#747b81 !important;
+    }
+    .label-dark{
+        color: #fff;
+        background-color: #343a40;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bands</h1>
+        
+        <div class="row" style="text-align:center; margin:10px 0"> 
+            
+           
+        </div>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                        <th>Row No.</th>
+                        <th id="bandName">Band Name</th>
+                        <th>Active</th>
+                        <th>Tags</th>
+                        <th>Members</th>
+                        <th id="NumberOfAlbums">No. Albums</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-dark btn-lg btn-block" id="pull">Get Data</button>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
