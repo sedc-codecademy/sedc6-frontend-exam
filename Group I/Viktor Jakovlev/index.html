@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+		<title>SEDC6 FrontEnd Exam</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+		<!-- Css -->
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+
+		<div>
+			<button id="getData">Load Bands</button>
+			<label id="seachLable" for="searchBox">Search Bands</label>
+			<input type="search" id="searchBox" placeholder="by name">
+
+			<select id="tags">
+			  	<option value="" selected>Show All</option>
+			</select>
+			<button id="loadTags">Load Tags</button>
+
+			<label for="active" id="firstBox">Show Active Bands</label>
+			<input type="checkbox" id="active">
+			
+		</div>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th id="name">Band Name</th>
+					<th>Is Band Active?</th>
+					<th>Tags</th>
+					<th>Band Memebers</th>
+					<th id="total">Albums</th>
+				</tr>
+			</thead>
+			<tbody id="tableBody">
+				
+			</tbody>
+		</table>
+
+		<div>
+			<button id="previous">Previous</button>
+			<button id="next">Next</button>
+		</div>
+
+		<!-- Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+		<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+
+		<!-- Personal Script -->
+		<script type="text/javascript" src="script.js"></script>
+	</body>
+</html>
