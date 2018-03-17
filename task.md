@@ -1,6 +1,6 @@
 # List of bands
 
-Create a web page that will load and display data about bands. The data is available here (TBD)<sup>[1](#myfootnote1)</sup>. The web page should have the following functionalities:
+Create a web page that will load and display data about bands. The data is available [here](https://raw.githubusercontent.com/sedc-codecademy/sedc6-frontend-exam/master/band-data.json)<sup>[1](#myfootnote1)</sup>. The web page should have the following functionalities:
 
 ## Main Task
 
