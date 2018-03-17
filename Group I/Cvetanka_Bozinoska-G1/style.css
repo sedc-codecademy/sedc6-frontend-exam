@@ -1,5 +1,3 @@
-
-
 *{
     margin: 0px;
     padding: 0px;
@@ -11,28 +9,7 @@ body {
     background-color: lightgrey;
     color: wheat;
 }
-.container{
-    background-color: lightgrey;
-    color: rgb(5, 5, 70);
-    margin: 10px;
-    padding: 10px; 
-    width: 100%;
-    height: 100%; 
-    border: 2px solid rgb(20, 20, 117);
-    position: relative;
-}
 
-.table{
-    background: pink;
-    padding: 0px;
-    margin: 0px;
-    width:100%;
-    height: 100%;
-    border:2px solid violet;
-}
-.table th{
-    border:2px solid violet;
-}
 button{
     height: 30px;
     background-color: rgb(25, 82, 204);
@@ -40,11 +17,6 @@ button{
     color: white;
     border-radius: 3px;
     outline:none;
-}
-
-
-::placeholder { 
-    color: #bebe35;
 }
 
 th{
@@ -68,9 +40,4 @@ td {
 td:nth-child(odd) {
     background-color: lightskyblue;
 }
-td:nth-child(8) {
-    width: 5%;
-}
-td:nth-child(9) {
-    width: 5%;
-}
+
