@@ -1,0 +1,12 @@
+h1 {
+    text-align: center;
+    color: rgb(21, 9, 131);
+    background-color: rgb(89, 188, 201);
+}
+th{
+    border: 3px solid darkblue;
+}
+
+td{
+    border: 3px dashed darkslategray;
+}
