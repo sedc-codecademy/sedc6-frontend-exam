@@ -1,4 +1,4 @@
-let myBooks = [];
+let myBands = [];
 
 
 localStorage.removeItem(["mybands"]);
