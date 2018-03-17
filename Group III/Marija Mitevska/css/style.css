@@ -1,0 +1,146 @@
+* {
+    font-family: 'Play', sans-serif;
+    margin: 0;
+}
+
+body {
+    background: url(../images/christian-perner-329584a.jpg) no-repeat fixed center;
+    color: #121214;
+}
+
+div.title {
+    background: #5e5a5827;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px 0px;
+    min-width: 720px;
+    text-align: center;    
+}
+
+.title-heading {
+    font-family: 'Metal Mania', cursive;
+    font-weight: 300;
+}
+
+h1.title-heading {
+    font-size: 3em;
+    padding: 10px 0;
+}
+
+h3.title-heading {
+    font-size: 2em;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, #e4dcd62d, #121214, #e4dcd62d);
+    background-image: -moz-linear-gradient(left, #e4dcd62d, #121214, #e4dcd62d);
+    background-image: -ms-linear-gradient(left, #e4dcd62d, #121214, #e4dcd62d);
+    background-image: -o-linear-gradient(left, #e4dcd62d, #121214, #e4dcd62d);
+    margin: 20px auto;
+    width: 90%;
+}
+
+input,
+label,
+select {
+    display: inline-block;
+    width: auto;
+    margin: 10px;
+    font-family: 'Metal Mania', cursive;
+    font-size: 1.7em;
+}
+
+option {
+    font-family: 'Metal Mania', cursive;
+}
+
+input,
+select {
+    border: 1px solid #121214;
+    border-radius: 1px;
+    background-color: #5e5a5827;
+}
+
+input[type="checkbox"] {
+    margin: 0 10px 0 25px;
+    cursor: pointer;
+}
+
+table {
+    width: 90%;
+    margin: 0 auto;
+}
+
+table tr {
+    width: 100%;
+}
+
+table th {
+    font-family: 'Metal Mania', cursive;
+    padding: 10px;    
+}
+
+table td {
+    border-bottom: 1px solid #121214;
+    color: #121214;
+    font-weight: 300;
+    font-size: 1.3em;
+    padding: 10px;
+    max-width: 100px;
+}
+
+table tr:nth-child(even) {
+    background-color: #5e5a5827;
+}
+
+table th {
+    font-size: 1.4em;
+}
+
+.table-header-clickable {
+    cursor: pointer;
+}
+
+.table-header-clickable:hover {
+    text-shadow: -3px -3px 7px #1e163148, 3px 3px 7px #1e163148, -3px 3px 7px #1e163148, 3px -3px 7px #1e163148;    
+}
+
+button {
+    font-size: 1.7em;
+    font-family: 'Metal Mania', cursive;
+    color: #121214;
+    border: 1px solid #121214;
+    border-radius: 3px;
+    background-color: #5e5a5827;
+    margin: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    text-shadow: -3px -3px 7px #1e163148, 3px 3px 7px #1e163148, -3px 3px 7px #1e163148, 3px -3px 7px #1e163148;
+}
+
+i {
+    color: #121214;
+}
+
+.container {
+    background: #5e5a5827;
+    width: 90%;
+    min-width: 720px;
+    height: auto;
+    padding: 20px 0;
+    position: relative;
+    margin: 20px auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: inline;
+}
