@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Band list</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+      
+                <div class="container">
+                    <h1>BAND LIST</h1>
+                    
+                    <div class="row" style="text-align:left; margin:10px 0"> 
+                        <div class="col-5">
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-default">
+                                    <input type="radio" name="minmax" value="0" autocomplete="off" checked> min to max
+                                </label>
+                                <label class="btn btn-default">
+                                    <input type="radio" name="minmax" value="1" autocomplete="off"> max to min
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="sort">Sort By</label>
+                                </div>
+                                <select class="custom-select" id="sort">
+                                    <option selected>Choose...</option>
+                                    <option value="1">Band Name</option>
+                                   
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="example" id="searchButton">
+                            <input type="text" placeholder="Search.." id="inputSearch" name="search">
+                            <button>search</button>
+                          </form>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Name</th>
+                                <th>Active</th>
+                                <th>Tags</th>
+                                <th>Members</th>
+                                <th>Albums</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+            
+                        </tbody>
+                    </table>
+                    <button type="button"  id="getData">Get Bands</button>
+            
+                </div>
+    
+
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="scripts/bootstrap.min.js" type="text/javascript"></script>
+    
+    <script src="scripts/script.js" type="text/javascript"></script>
+    
+</body>
+
+</html>
