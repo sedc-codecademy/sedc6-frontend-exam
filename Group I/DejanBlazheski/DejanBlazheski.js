@@ -118,7 +118,11 @@ function populateTable(data, id){
         tags += `${data.tags[i]}, `;
     }
     for(let i = 0; i < data.members.length; i += 1){
-        members += `${data.members[i].name}</br>`;
+        if(data.members[i].former){
+        }
+        else{
+            members += `${data.members[i].name}</br>`;
+        }
     }
     $("#myTable").append(`
         <tr>
