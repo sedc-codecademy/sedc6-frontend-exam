@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Front-End Exam SEDC</title>
+</head>
+
+<body>
+    <!-- ---------------------------------------NAVBAR------------------------------------------- -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">SEDC Music Bands Exam</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="index.html">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+                <a class="nav-item nav-link" href="bands.html">Bands Details</a>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+
+    <!-- ---------------------------------------SEARCH PANEL------------------------------------------- -->
+
+    <div class="container" id="searchContainer">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Search by band's name:</h3>
+                <input type="text" class="form-control" id="searchInputValue">
+                <br>
+                <button class="btn btn-default" id="btnSearch">Search</button>
+                <button class="btn btn-default" id="refresh">Refresh Table</button>
+            </div>
+            <div class="col-md-6">
+                <h3>Select band by tags:</h3>
+                <select class="form-control" name="bandTags" id="tagsSelect">
+               
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Check to see only active bands</h4>
+                <div class="input-group">
+                    <input class="checkBox" type="checkbox" id="checkActiveBands">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+    <!-- ---------------------------------------DATA TABLE------------------------------------------- -->
+
+
+    <div class="container">
+        <table class="table table-hover" id="bandTable">
+            <thead>
+                <th>#</th>
+                <th id="bandNameTh">Band's Name</th>
+                <th>Still Active?</th>
+                <th>Band's tags</th>
+                <th>Current Band Members</th>
+                <th id="bandNumAlbumsTh">Total number of albums</th>
+            </thead>
+            <tbody id="myTable">
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+body{
+        background-color: lightgrey;
+}
+
+#searchContainer{
+    background-color: rgba(47, 79, 79, 0.76);
+    height: auto;
+    color: white;
+    border-radius: 10px;
+}
+
+.checkBox{
+    width: 15px;
+    height: 15px;
+    margin-left: 65%;
+    margin-top: -25px;
+}
+
+#bandNameTh{
+    cursor: pointer;
+}
+
+#bandNumAlbumsTh{
+    cursor: pointer;
+
+}
+
+.click{
+    background-color: cadetblue;
+
+}
+
+#dropDownContainer{
+    height: 122px;
+    background-color: rgba(47, 79, 79, 0.76);
+    color: white;
+    border-radius: 10px;
+}
