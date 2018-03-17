@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+        <input type="text" placeholder="regularSearch..." class="regularSearch">
+        <button class="regularSearchBtn" >Regular Search</button>
+        <label for="active">Active Bands</label>
+        <input type="checkbox" class="active">
+   
+     <!-- for inserting the dinamicly created butons -->
+     <div id="topDiv">
+    </div>
+
+    <table border="1">
+        <thead>
+            <tr id="sortingMyTable">
+                <th >Row Number</th>
+                <th value="name">Band Name</th>
+                <th>Active</th>
+                <th>Tags</th>
+                <th>List of Band Members</th>
+                <th value="number">Total number of albums</th>
+            </tr>
+        </thead>
+        <tbody id="myBody">
+            
+
+        </tbody>
+    </table>
+
+    <input type="text" placeholder="regularSearch..." class="regularSearch">
+    <button class="regularSearchBtn" >Regular Search</button>
+    <label for="active">Active Bands</label>
+    <input type="checkbox" class="active">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
