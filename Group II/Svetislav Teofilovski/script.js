@@ -45,7 +45,7 @@ function populateTable(data){
                 <td id="name${i}">${data[i].name}</td>
                 <td id="active${i}">${data[i].active}</td>
                 <td id="tags${i}">${data[i].tags}</td>
-            <td id="member${i}">${data[i].members[0].name}</td>
+                <td id="member${i}">${getMembers(data[i].members)}</td>
                 <td id="albums${i}">${data[i].albums.length}</td>
             </tr>
         `);              
@@ -53,8 +53,17 @@ function populateTable(data){
     }
 }
 
+function getMembers(members) {
 
+    return members
+        .filter(member => !member.former)
+        .map(member => member.name)
+        .join("<br/>");
 
+    // for (let i = 0; i < members.length; i++) {
+    //     console.log(members[i]);
+    // }
+}
 
 $("#next").click(function(){
     page +=10;

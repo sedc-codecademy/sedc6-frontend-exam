@@ -3,12 +3,12 @@
     
 }
 
-
 table{
-    align-self: center;
+  
     border: 1px solid black;
     text-align: center;
     background: rgba(209, 103, 103, 0.808);
+    
 }
 th{
     border: 2px solid black;
