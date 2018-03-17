@@ -1660,20 +1660,20 @@
            // unsucessful atempt no clue why :/
 
 
-           // $("#sort").on("change", function (event) {
-           //             var pickedValue = event.target.value;
-           //             var sortingFunction = null;
-           //             switch (pickedValue) {
-           //                 case '1': //sort by name
-           //                     sortingFunction = (a, b) =>
-           //                         (parseInt(a.name) - parseInt(b.name));
-           //                     break;
-           //                 case '2': // sort by number of albums
-           //                     sortingFunction = (a, b) =>
-           //                         (a.albums.localeCompare(b.albums));
-           //                     break;
-           //             }
-           //         })
+           $("#sort").on("change", function (event) {
+                       var pickedValue = event.target.value;
+                       var sortingFunction = null;
+                       switch (pickedValue) {
+                           case '1': //sort by name
+                               sortingFunction = (a, b) =>
+                                   (parseInt(a.name) - parseInt(b.name));
+                               break;
+                           case '2': // sort by number of albums
+                               sortingFunction = (a, b) =>
+                                   (a.albums.localeCompare(b.albums));
+                               break;
+                       }
+                   })
 
            for (let i = 0; i < bands.length; i++) {
                for (let z = 0; z < bands[i].members.length; z++) {
