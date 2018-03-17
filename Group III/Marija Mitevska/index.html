@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <![endif]-->
+    <title>Bands</title>
+    <link id="favicon" rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Metal+Mania|Play:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- THE NAVIGATION DIV -->
+    <div class="title">
+        <h1 class="title-heading">Bands</h1>
+        <hr>
+        <!-- <h3 class="title-heading">Info about bands!</h3> -->
+        <label for="search-box">Search by name:</label>
+        <input type="text" id="search-box">
+        <button id="search-btn">Search</button><br>
+        <select name="tag-dropdown" id="tag-dropdown">
+            <option value="default" selected disabled>Choose genre from the list...</option>
+        </select><br>
+        <input type="radio" id="active-band" name="active-radio" value="active">
+        <label for="active-band">Active</label>
+        <input type="radio" id="inactive-band" name="active-radio" value="inactive">
+        <label for="inactive-band">Inactive</label>
+    </div>
+
+    <!-- THE DIV WITH THE TABLE WHICH DISPLAYS THE BANDS -->
+    <div id="table-div" class="container table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th id="ID-header" class="ID-tableField">ID</th>
+                    <th id="bandName-header" class="bandName-tableField table-header-clickable">Band name <i id="bandName-arrowUp" class="fas fa-arrow-up hidden"></i><i id="bandName-arrowDown" class="fas fa-arrow-down hidden"></i></th>
+                    <th id="active-header" class="active-tableField">Active</th>
+                    <th id="tags-header" class="tags-tableField">Tags</th>
+                    <th id="members-header" class="members-tableField">Members</th>
+                    <th id="albums-header" class="albums-tableField table-header-clickable">Albums <i id="albums-arrowDown" class="fas fa-arrow-down hidden"></i><i id="albums-arrowDown" class="fas fa-arrow-up hidden"></i></th>
+                </tr>
+            </thead>
+            <tbody id="table">
+
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/script.js" type="text/javascript"></script>
+</body>
+
+</html>
