@@ -1,0 +1,32 @@
+                                    * {
+                                        margin: 0;
+                                        padding: 4px;
+                                    }
+                                    
+                                    table {
+                                        margin: 0 auto;
+                                        width: 80%;
+                                    }
+                                    
+                                    body {
+                                        font-size: 11px;
+                                        background: #f4f4f4;
+                                        line-height: 1.5em;
+                                        margin: 0 auto;
+                                        width: 90%;
+                                    }
+                                    
+                                    h1 {
+                                        text-align: center;
+                                        height: 30px;
+                                        background-color: black;
+                                        color: whitesmoke;
+                                        font-size: 16px;
+                                        border-radius: 45px;
+                                    }
+                                    
+                                    tfoot {
+                                        text-align: center;
+                                        background-color: black;
+                                        color: white;
+                                    }
