@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Band List</title>
+    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.css">
+    <link>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>List of Bands</h1>
+
+        <div class=" row col-sm-5">
+            <div class="input-group mb-1">
+                <div class="input-group-prepend">
+                    <input id='search' type="text" class="form-control" placeholder="Type to search..." aria-label="Text input with segmented dropdown button">
+
+                </div>
+            </div>
+        </div>
+        <div class="row offset-sm-9 mb-3">
+
+            <div class="col-sm-1 ">
+                <input type="checkbox" id="activeBands" name="checkBox" value="active">
+            </div>
+            <label for="activeBands" class=" col-sm-7 ">Show Active Bands</label>
+
+            <ul class="offset-sm-1" id="bands_display"></ul>
+
+        </div>
+
+        <div class="row offset-sm-9 mb-3">
+            <label for="tagsList" class="col-sm-7 col-form-label"></label>
+            <div class="col-sm-9">
+                <select id="tagsList" class="form-control">
+                    <option selected diabled>Tags </option>
+
+                </select>
+            </div>
+            <ul class="offset-sm-1" id="bandsT_display"></ul>
+        </div>
+
+
+
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Row number</th>
+                    <th>
+                        <a href="#" id="name" class="sorting-header" data-sort="name" data-direction="asc">Name</a>
+                    </th>
+
+                    <th>If active</th>
+                    <th>Tags</th>
+                    <th>Current band members</th>
+                    <th>
+                        <a href="#" id="albums" class="sorting-header" data-sort="albums" data-direction="asc">Albums</a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-dark btn-lg btn-block" id="pull">Get Data</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script src="node_modules\jquery\dist\jquery.min.js"></script>
+        <script src="node_modules\tether\dist\js\tether.min.js"></script>
+        <script src="node_modules\bootstrap\dist\js\bootstrap.bundle.min.js"></script>
+        <script src="script.js"></script>
+
+</body>
+
+</html>
