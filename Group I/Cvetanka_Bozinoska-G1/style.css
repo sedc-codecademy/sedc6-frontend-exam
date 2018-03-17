@@ -1,0 +1,47 @@
+*{
+    margin: 0px;
+    padding: 0px;
+  
+} 
+table{
+    border: 5px solid black;
+}
+th{
+    border: 10px solid black;
+    width: 10vw;
+}
+td{
+    border: 5px solid black;
+    width: 10vw;
+}
+
+.form{
+	display: inline-flex;
+}
+
+.save{
+    box-sizing: border-box; 
+    display: none;
+    height: 100%;
+    width:100%;  
+    background-color: #c2cf04;
+    border: 2px solid #c2cf04;
+    align-self: center;
+}
+
+.del, .edit{
+    box-sizing: border-box;
+    display: inline-block; 
+  
+    background-color: #10b133;
+    border: 2px solid #10b133;
+    width: 50%;
+    height: 100%;
+    align-content: center;
+}
+.del{
+    border: 2px solid #d62b2b;
+    background-color: #d62b2b;
+    width: 50%;
+    height: 100%;
+}
