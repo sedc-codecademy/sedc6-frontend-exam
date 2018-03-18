@@ -1,5 +1,10 @@
 let bands = [];
 let sortBands = [];
+let tags = [];
+let sort = "";
+//let pages = 10;
+//let start = 0;
+
 //let sortTags = [];
 
 $(document).ready(() => {
@@ -12,8 +17,12 @@ $(document).ready(() => {
             for (let i = 0; i < bands.length; i++) {
                 bands[i].id = (i+1);                
             }
+            for (let j = 0; j < tags.length; j++) {
+                $("#listOfTags").append(`
+                    <option value="${tags[i]}">${tags[i]}</option>
+                `);
+            }
             populateTable(bands);
-            filterTable(bands);
             sortBands = SortTableBands(bands);
             // sortTags = SortTableByTags(bands);
         },
@@ -21,22 +30,71 @@ $(document).ready(() => {
             console.log(err);
         }
     });
+    // All Buttons First
 
-    $("#sortBy").on("change", () => {
-        let sort = $("#sortBy").val();
+    // Button For Sorting By Name Button
+    $("#sortByName").on("click", () => {
+        if(sort === "nameForward"){
+            sort = "nameReverse"
+        }
+        else{
+            sort = "nameForward"
+        }
         sortBands = SortTableBands(sortBands, sort)
     });
 
-    // $("#listOfTags").on("change", () => {
-    //     let choose = $("#listOfTags").val();
-    //     sortTags = SortTableByTags(sortTags);
+    // Button For Sorting By Length Of Number Of Albums
+    $("#sortByNumberOfAlbum").on("click", () => {
+        if(sort === "albumsForward"){
+            sort = "albumsReverse"
+        }
+        else{
+            sort = "albumsForward"
+        }
+        sortBands = SortTableBands(sortBands, sort)
+    });
+
+    // Button Next
+    // $("#next").on("click", () => {
+    //     if (pages < 18) {
+    //         pages += 10;
+    //         start += 10;
+    //         populateTable(bands);
+    //     }
     // });
+
+    // Button Previous
+    // $("previews").on("click", () => {
+    //     if (pages > 10) {
+    //         pages -= 10;
+    //         start -= 10;
+    //         populateTable(bands);
+    //     }
+    // });
+
+    // Button for Search Band By Name
+    // $("#searchBox").on("change", () => {
+    //     populateTable(bands);
+    // });
+
+    //
+    // $("#listOfTags").on("change", () => {
+    //     populateTable(bands);
+    // });
+
 });
 
+
+
+
+
+// Populate Table and loops - Ways to iterate number of albums and name of member by bands
 function populateTable(data){
     $("#myBody").html("");
     for (let i = 0; i < data.length; i++) {
-        let members = "";
+        let members = [];
+        let albums = [];
+
         for(let j = 0; j < data[i].members.length; j ++){
             
             if(data[i].members[j].former === true){
@@ -46,54 +104,66 @@ function populateTable(data){
                 members += `${data[i].members[j].name}</br>`;
             }
         }
+
+        for (let k = 0; k < data[i].albums.length; k++) {
+            albums += `${data[i].albums[k].name}`;            
+        }
+
+    
         
         $("#myBody").append(`
             <tr>
                 <td>${data[i].id}</td>
-                <td id="$name${i}">${data[i].name}</td>
-                <td id="active${i}">${data[i].active}</td>
-                <td id="members${i}">${members}</td>
-                <td id="albums${i}">${data}</td>
+                <td>${data[i].name}</td>
+                <td>${data[i].active}</td>
+                <td>${data[i].tags}</td>
+                <td>${members}</td>
+                <td>${data[i].albums.length}</td>
             </tr>  
         `)
     }
 };
 
+
+// Sort function for Name And Length Of Number Of Albums
 function SortTableBands(data, sort) {
     switch(sort){
-        case '1': // Bands Name
-        data = data.sort((a,b) => a.name.localeCompare(b.name))
+        case 'nameForward': // Bands Name
+        data.sort((a, b) => a.name.localeCompare(b.name));
+            $("#sortInfo").text("Sorted by: Bands Name");
         break;
-        case '2': // Number Of Albums
-        // listata so treba da ja naprajs!! data = data.sort((a,b) => (a.year - b.year));
         
-    default:
+        case 'nameReverse': // Number Of Albums
+        data.sort((a, b) => b.name.localeCompare(a.name));
+        $("#sortInfo").text("Sorted by: Bands Name Reverse");
+        break;
+        
+        case 'albumsForward':
+            data.sort((a, b) => a.albums.length - b.albums.length);
+            $("#sortInfo").text("Sorted By: Number Of Albums");
+            break;
+        
+        case 'albumsReverse':
+            data.sort((a, b) => b.albums.length - a.albums.length);
+            $("#sortInfo").text("Sorted By: Number Of Albums Reverse");
+            break;
+            default:
         break;
     }
     populateTable(data);
     return(data);
-}
-
-// function SortTableByTags(data, filter){
-//     switch (filter) {
-//         case 1:
-//             data = data.filter(item => item.tags === " ");
-//             break;
-    
-//         default:
-//             break;
-//     }
-//     populateTable(data);
-//     return data;
-// }
-
-function filterTable(data, filter){
-    switch(filter){
-        case "name":
-            data = data.filter(item => item.name === "name");
-            break;
-        default:
-            break;
-    }   
-    return data; 
 };
+
+// function filterData(data){
+//      let searchKey = $("#searchBox").val().toLowerCase();
+//      data = data.filter(item => item.name.toLowerCase().includes(searchKey));
+
+//     let selectedTag = $("#listOfTags").find(":selected").val();
+//     if(selectedTag !== "")
+//         data = data.filter(item => item.tags.includes(selectedTag));
+
+//     if($("#onlyActive").is(":checked")){
+//          data = data.filter(item => item.active);
+//     }
+//     return data;
+// };
