@@ -1,0 +1,43 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    background: rgb(152, 188, 224);
+    color: black;
+} 
+body {
+      
+    background-color: lightgrey;
+    color: wheat;
+}
+
+button{
+    height: 30px;
+    background-color: rgb(25, 82, 204);
+    border: 2px solid rgb(25, 82, 204);
+    color: white;
+    border-radius: 3px;
+    outline:none;
+}
+
+th{
+    height: 30px;
+    width: 100px;
+}
+td{
+    height: 30px;
+    width: 100px;
+}
+.td-kind{
+    width: 30px; 
+    text-align: center;
+    
+}
+
+td {
+    background-color: violet;
+}
+
+td:nth-child(odd) {
+    background-color: lightskyblue;
+}
+

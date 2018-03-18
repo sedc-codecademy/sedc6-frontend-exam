@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cvetanka Bozhinoska</title>
+    <link rel="stylesheet" href="CvetankaBozhinoska.css">
+</head>
+
+<body>
+   <div class="col-md-3 mb-3">
+    <label for="search">Search</label>
+    <input type="text" id="srcFilter">
+    
+    <select id="tags">
+        <option value="All">All</option>
+    </select>
+    </div>
+
+    <div class="col-md-3 mb-3">
+    <label for="isActive">Show Active</label>
+    <input type="checkbox" name="isActive" id="isActive">
+    <br>
+	<label id = "currentPage"></label>
+
+
+    <div class="col-md-3 mb-3" class="btn btn-primary">
+    <button id="prev">Prev</button>
+    <button id="next">Next</button>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th id="sortName">NAME</th>
+                <th>VISUAL</th>
+                <th>TAGS</th>
+                <th>MEMBERS</th>
+                <th id="sortAlbums">ALBUMS</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+
+        </tbody>
+    </table>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="CvetankaBozhinoska.js"></script>
+   
+</body>
+</html>
