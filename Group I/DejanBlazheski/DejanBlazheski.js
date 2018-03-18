@@ -6,31 +6,48 @@ let sortBy = "";
 let page = 1;
 let maxElements = 10;
 
+let extraTask = false;
+
 $.ajax({
     method: "GET",
     url: "https://raw.githubusercontent.com/sedc-codecademy/sedc6-frontend-exam/master/band-data.json",
     success: (data) => {
         bands = JSON.parse(data);
 
-        bands.forEach(band => {
-            tags = [...tags, ...band.tags];
-        });
-        tags = Array.from(new Set(tags));
+        if(extraTask){
+            $(document).ready(ExtraTaskOnReady);
 
-        for(let i = 0; i < tags.length; i += 1){
-            $("#tags").append(`
-                <option value="${tags[i]}">${tags[i]}</option>
-            `);
+            bands.forEach(band => {
+                $("#bands").append(`
+                    <option value="${band.name}">${band.name}</option>
+                `);
+            });
+    
+            populateTableExtra(bands[0]);
         }
+        else{
+            $(document).ready(mainTaskOnReady);
 
-        proccessData(bands, page, maxElements)
+            bands.forEach(band => {
+                tags = [...tags, ...band.tags];
+            });
+            tags = Array.from(new Set(tags));
+    
+            for(let i = 0; i < tags.length; i += 1){
+                $("#tags").append(`
+                    <option value="${tags[i]}">${tags[i]}</option>
+                `);
+            }
+
+            proccessData(bands, page, maxElements)
+        }
     },
     error: (err) => {
         console.log(err);
     }
 });
 
-$(document).ready(() => {
+function mainTaskOnReady(){
     $("#sortName").on("click", () => {
         if(sortBy === "nameAsc"){
             sortBy = "nameDes"
@@ -68,9 +85,7 @@ $(document).ready(() => {
         }
         proccessData(bands, page, maxElements);
     });
-});
-
-
+}
 
 function proccessData(data, page, maxElements){
     $("#myTable").html("");
