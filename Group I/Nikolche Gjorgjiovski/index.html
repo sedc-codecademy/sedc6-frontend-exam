@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Example JavaScript</title>
+        <link rel="stylesheet" href="css/css.css">
+    </head>
+    <body>
+
+        <label for="searchBox">Search Badns:</label>
+        <input type="text" placeholder="By Name" id="searchBox">
+        
+        <button type="button" id="next">Next</button>
+        <button type="button" id="previews">Previews</button>
+
+        <select id="listOfTags">
+                <option selected>List Of Tags</option>
+                <option value=""></option>
+            </select>
+
+        <p id="sortInfo">Sorted by: Click on "Name Of The Band" or "Number Of Albums"</p>
+
+        <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th id="sortByName">Name Of The Band</th>
+                        <th>Band Active</th>
+                        <th>Tags</th>
+                        <th>List Of Current Band Members</th>
+                        <th id="sortByNumberOfAlbum">Number Of Albums</th>
+                    </tr>
+                </thead>
+                <tbody id="myBody">
+        
+                </tbody>
+            </table>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="javaScript.js"></script>
+    </body>
+</html>
