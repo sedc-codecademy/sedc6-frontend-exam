@@ -1,0 +1,21 @@
+<div>
+  <select name="bands">
+    <option *ngFor="let band of bands; let i = index" (click)="ShowInfo(band, i)">
+      {{band.name}}
+    </option>
+  </select>
+  <div>
+    <h2>Past Members: </h2>
+    <ul *ngIf="selectedBand" >
+      <li *ngFor="let member of pastMembers" >
+        {{ member.name }}
+      </li>
+    </ul>
+    <!-- <h2>Albums: </h2>
+    <ul>
+      <li *ngFor="let album of albums">
+        {{album}}
+      </li>
+    </ul> -->
+  </div>
+</div>

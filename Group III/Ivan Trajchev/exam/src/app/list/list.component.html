@@ -1,0 +1,55 @@
+<div>
+  <span>
+    <button (click)="flipPage('prev')">prev. page</button>
+  </span>
+  <span>
+    <button (click)="flipPage('next')">next page</button>
+  </span>
+</div>
+<div>
+
+  <label for="search">Search List...</label>
+  <input type="text" name="search" (input)=filterList($event)>
+
+  <label for="active">list only active bands...</label>
+  <input type="checkbox" name="active" (change)=filterActive($event)>
+</div>
+
+<table>
+  <tbody>
+    <ng-container *ngFor="let band of bandsOnPage; let i = index">
+      <tr>
+        <td>
+          {{i + 1}}
+        </td>
+        <td>
+          <h2 (click)="sortBy('name')">
+            {{band.name}}
+          </h2>
+        </td>
+        <td [style.color]="band.active ? 'green': 'red'">
+          {{band.active ? "active" : "inactive"}}
+        </td>
+        <td>{{band.tags.join(", ")}}</td>
+      </tr>
+      <tr *ngFor="let member of band.members">
+        <td>{{member.name}}</td>
+      </tr>
+      <tr>
+        <td>
+          <h4 (click)="sortByAlbum()">Albums</h4>
+        </td>
+      </tr>
+      <tr>
+        <select name="album">
+          <option *ngFor="let album of band.albums">
+            {{album.name}}
+          </option>
+        </select>
+        <td>
+          Number of albums: {{band.albums.length}}.
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
