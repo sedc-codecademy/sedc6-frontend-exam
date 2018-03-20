@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <title>BandTableAPI</title>
+</head>
+
+<body>
+    <div class="container">
+        <p>Table</p>
+        <div class="row" style="text-align:center; margin:10px 0">
+            <div class="col-md-5">
+                <form class="form-inline" id="searchForm">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="inputBandName" class="sr-only">Password</label>
+                        <input type="text" class="form-control" id="inputBandName" placeholder="Enter keyword...">
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2">Search</button>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="activeBands">
+                        <label class="form-check-label" for="activeBands">
+                            Show active bands
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-5">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text label-dark" for="sort">Sort by</label>
+                    </div>
+                    <select class="custom-select " id="sort">
+                        <option selected>Choose...</option>
+                        <option value="1">All</option>
+                        <option value="2">Thrash metal</option>
+                        <option value="3">Metal</option>
+                        <option value="4">Heavy metal</option>
+                        <option value="5">Hard rock</option>
+                        <option value="6">Rock</option>
+                        <option value="7">Speed metal</option>
+                        <option value="8">Nu metal</option>
+                        <option value="9">Alternative metal</option>
+                        <option value="10">German</option>
+                        <option value="11">Alternative rock</option>
+                        <option value="12">Political</option>
+                        <option value="13">Rapcore</option>
+                        <option value="14">Hair metal</option>
+                        <option value="15">Grunge</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="text-align:center; margin:10px 0">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>#</th>
+                        <th id="sortName" style="cursor: pointer">Band Name</th>
+                        <th>Tags</th>
+                        <th>Members</th>
+                        <th id="sortAlbums" style="cursor: pointer">Albums</th>
+                        <th>Active</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-dark btn-lg btn-block" id="pull">Get Data</button>
+        </div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
+
+    </div>
+</body>
+
+</html>
