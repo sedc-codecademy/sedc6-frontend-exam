@@ -3,7 +3,7 @@ $(() => {
         url: "https://raw.githubusercontent.com/sedc-codecademy/sedc6-frontend-exam/master/band-data.json",
         dataType: "json",
         success: function (data) {
-            populateTable(data);
+            populateTableAndAddEvents(data);
         },
         error: function (err) {
             console.log(`Error ${err} happened.`);
@@ -11,12 +11,20 @@ $(() => {
     });
 
 
-    function populateTable(data) {
+    //Main function that holds all the logic and all subfunctions in it
+    function populateTableAndAddEvents(data) {
+        //setting some global variables that are needed for sorting the data and setting the event handlers for the search options
         let rows = [];
+        let pagesA = [];        
         let counter = 1;
         let nameSort = false;
         let albumSort = false;
         let isActive = false;
+        $("#searchBtn").on("click", searchClick);
+        $("#tagSelect").on("change", tagSearchHandler);  
+        
+        //the function that is called to reset the table and put new event handlers on the elements whenever some sorting
+        //event is triggered 
         function clearTable() {
             let tr =
                 $(`<tr>
@@ -44,9 +52,8 @@ $(() => {
             if(isActive)
                 $("#isActive").prop('checked', true);
         }
-
         
-
+        //a function used for populating the table with the correct tags for each band
         function printTags(tagsArr) {
             tagsToStr = "";
             tagsArr.forEach(tag => {
@@ -54,7 +61,7 @@ $(() => {
             });
             return tagsToStr;
         }
-
+        //a function used for populating the table with the correct band members for each band
         function printMembers(members) {
             membersToStr = "";
             members.forEach(member => {
@@ -62,14 +69,15 @@ $(() => {
             });
             return membersToStr;
         }
-
+        //the function that is responsible for re-populating the global rows array variable with new table rows from
+        //the sorted data whenever a sorting event is triggered
         function populateRowsArray(data, rowsArray) {
             for (let i = 0; i < data.length; i++) {
                 let row =
                     $(`<tr>
                     <th scope="row" data-id=${counter}>${counter}</th>
                     <td>${data[i].name}</td>
-                    <td class="${data[i].active ? 'active' : 'inactive'}">${data[i].active}</td>
+                    <td class="${data[i].active ? 'activeSort' : 'inactiveSort'}">${data[i].active}</td>
                     <td>${printTags(data[i].tags)}</td>
                     <td>${printMembers(data[i].members)}</td>
                     <td>${data[i].albums.length}</td>
@@ -83,10 +91,14 @@ $(() => {
 
         rows = populateRowsArray(data, rows);
 
-        let pagesA = [];
-
-        function populatePagesArray() {
+        //a function that re-populates the global pages array variable creates a page for every 10 items in the table
+        //from the sorted data everytime a sorting event is triggered 
+        function populatePagesArray(data) {
             pagesA = [];
+            let existingPages = $(".blueA");
+            if(existingPages.length !== 0){
+                existingPages.remove();
+            }
             let firstPageA = $(`<a href="#" class="blueA" id="1">1</a>`);
             pagesA.push(firstPageA);
             $(".mainContainer").append(firstPageA);
@@ -101,11 +113,13 @@ $(() => {
             counter = 1;
         }
 
-        populatePagesArray();
+        populatePagesArray(data);
 
-
-        function populatePages(rows) {
+        //the function responsible for adding an event that populates the pages from the pages array variable with
+        //table rows created from sorted data
+        function populatePages(rows,data) {
             clearTable();
+            populatePagesArray(data);
             for(let i = 0; i < 10; i++){
                 $("#bandsTable").append(rows[i]);
             }
@@ -126,8 +140,9 @@ $(() => {
             });
         }
 
-        populatePages(rows);
+        populatePages(rows,data);
 
+        //event handler function that sorts the data using the band names
         function bandNameClick() {
             let nameSortedData = data.sort((a, b) => {
                 if (a.name < b.name)
@@ -138,19 +153,20 @@ $(() => {
             });
             clearTable();
             albumSort = false;
+            isActive = false;
+            $("#searchInput").val('');
+            $("#tagSelect").val('search');   
             let nameSortedRows = populateRowsArray(nameSortedData, []);
             if(nameSort){
                 nameSortedRows.reverse();
                 nameSort = false;
-                isActive = false;
-
             } else{
                 nameSort = true;
             }
-            populatePages(nameSortedRows);
+            populatePages(nameSortedRows,nameSortedData);
             
         }
-
+        //event handler function that sorts the data using the number of albums of the bands
         function albumNumberClick(){
             let albumSortedData = data.sort((a, b) => {
                 return b.albums.length - a.albums.length;
@@ -158,6 +174,8 @@ $(() => {
             clearTable();
             nameSort = false;
             isActive = false;
+            $("#searchInput").val('');
+            $("#tagSelect").val('search');   
             let albumSortedRows = populateRowsArray(albumSortedData, []);
             if(albumSort){
                 albumSortedRows.reverse();
@@ -165,11 +183,10 @@ $(() => {
             } else{
                 albumSort = true;
             }
-            populatePages(albumSortedRows);
+            populatePages(albumSortedRows,albumSortedData);
         }
 
-
-        //DEBUG ACTIVE!!!
+        //event handler function that sorts the data according to their 'active' state
         function isActiveClick(){
             let activeSortedData = data.filter((item) => {
                 if(item.active)
@@ -177,16 +194,66 @@ $(() => {
                 else
                     return false;
             });
-            clearTable();
             nameSort = false;
             albumSort = false;
+            $("#searchInput").val('');
+            $("#tagSelect").val('search');                                    
             let activeSortedRows = populateRowsArray(activeSortedData, []);
             if(isActive){
+                let rowsArray = populateRowsArray(data, []);
                 isActive = false;
+                clearTable();
+                populatePages(rowsArray, data);
             } else{
-                populatePages(activeSortedRows);
                 isActive = true;
+                clearTable();                
+                populatePages(activeSortedRows,activeSortedData);
             }
+        }
+
+        //event handler function that sorts the data according to the search term entered in the search input field
+        function searchClick(){
+            let searchTerm = $("#searchInput").val().toLowerCase();
+            $("#searchInput").val('');
+            $("#tagSelect").val('search');                        
+            if(searchTerm === undefined)
+                return;
+            let searchSortedData = data.filter((item) => {
+                if(item.name.toString().toLowerCase().includes(searchTerm))
+                    return true;
+                else
+                    return false;
+            });
+            let searchSortedRows = populateRowsArray(searchSortedData,[]);
+            nameSort = false;
+            albumSort = false;
+            isActive = false;
+            clearTable();
+            populatePages(searchSortedRows,searchSortedData);
+        }
+
+        //event handler function that sorts the data according to what tag is chosen from the tags select
+        function tagSearchHandler(){
+            let tag = $("#tagSelect").val().toLowerCase();
+            $("#searchInput").val('');
+            nameSort = false;
+            albumSort = false;
+            isActive = false;
+            clearTable();
+            if(tag === "search"){
+                let rowsArray = populateRowsArray(data, []);
+                isActive = false;
+                populatePages(rowsArray, data);
+                return;                
+            }
+            let tagSortedData = data.filter((item) => {
+                if(item.tags.includes(tag))
+                    return true;
+                else
+                    return false;
+            });
+            let tagSortedRows = populateRowsArray(tagSortedData, []);
+            populatePages(tagSortedRows, tagSortedData);
         }
     }
 });

@@ -21,6 +21,11 @@ a:hover{
 .activeSort{
     color:green;
 }
+
 .activeSort:hover{
     color:green;
+}
+
+.inactiveSort{
+    color: red;
 }
