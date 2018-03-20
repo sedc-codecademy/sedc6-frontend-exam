@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+    <title>Exam</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="container mainContainer">
+            <div class="col col-xs-12 col-lg-12">
+                <div class="row">
+                    <div class="form-row">
+                        <div class="col-5">
+                            <label for="searchInput">Search by Band Name:</label>
+                        </div>
+                        <div class="col-5">
+                            <input class="form-control" type="text" id="searchInput" placeholder="Band Name">
+                        </div>
+                        <div class="col-2"><button type="button" class="btn btn-primary" id="searchBtn">Search</button></div>                        
+                    </div>
+                    <div class="col-3">
+                        <select class="custom-select" id="tagSelect">
+                            <option selected value="search">Search by Tag</option>
+                            <option value="metal">Metal</option>
+                            <option value="thrash Metal">Thrash Metal</option>
+                            <option value="heavy Metal">Heavy Metal</option>
+                            <option value="speed Metal">Speed Metal</option>
+                            <option value="alternative Metal">Alternative Metal</option>
+                            <option value="nu Metal">Nu Metal</option>
+                            <option value="hair Metal">Hair Metal</option>
+                            <option value="rock">Rock</option>
+                            <option value="hard Rock">Hard Rock</option>
+                            <option value="alternative Rock">Alternative Rock</option>
+                            <option value="political">Political</option>
+                            <option value="rapcore">Rapcore</option>                                                        
+                            <option value="grunge">Grunge</option>                                                        
+                            <option value="german">German</option>                                                        
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <table class="table table-dark" id="bandsTable">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="biggerFont">Row Number</th>
+                            <th scope="col" class="biggerFont">
+                                <a href="#" id="bandName">Band Name</a>
+                            </th>
+                            <th scope="col" class="biggerFont">Active
+                                <input type="checkbox" name="" id="isActive">
+                            </th>
+                            <th scope="col" class="biggerFont">Tags</th>
+                            <th scope="col" class="biggerFont">Band Members</th>
+                            <th scope="col" class="biggerFont">
+                                <a href="#" id="bandAlbums">Number of Albums</a>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
