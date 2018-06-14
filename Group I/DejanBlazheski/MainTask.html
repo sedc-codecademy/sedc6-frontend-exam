@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Main Task</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="mainTask">
+        <label for="search">Search</label>
+        <input type="text" id="search">
+
+        <label for="tags">Tags</label>
+        <select id="tags">
+            <option value="all">all</option>
+        </select>
+
+        <label for="activeOnly">Show only active bands</label>
+        <input type="checkbox" id="activeOnly">
+
+        <table>
+            <tr>
+                <th>Row</th>
+                <th id="sortbyName">Band Name</th>
+                <th>Is Active</th>
+                <th>Tags</th>
+                <th>Members</th>
+                <th id="sortbyAlbums">Albums</th>
+            </tr>
+            <tbody id="dataTable">
+
+            </tbody>
+        </table>
+
+        <button id="prevBtn">Prev</button>
+        <label id="pageNum"></label>
+        <button id="nextBtn">Next</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -5,41 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Extra Task</title>
-    <link rel="stylesheet" href="DejanBlazheski.css">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+    <div id="extraTask">
+        <label>Band</label>
+        <select id="bands"></select>
 
-    <label>Band</label>
-    <select id="bands">
-        
-    </select>
-
-    <table>
-        <thead>
+        <table>
             <tr>
-                <th>
-                    Past Members
-                </th>
-                <th>
-                    Album Summary
-                </th>
-                <th>
-                    Years Active
-                </th>
-                <th>
-                    Albums
-                </th>
+                <th>Past Members</th>
+                <th>Album Summary</th>
+                <th>Years Active</th>
+                <th>Chronological list of albums</th>
             </tr>
-        </thead>
-        <tbody id="myTableExtra">
+            <tbody id="dataTable"></tbody>
+        </table>
+    </div>
 
-        </tbody>
-    </table>
-
-    <p id="testP"></p>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="DejanBlazheski.js"></script>
-    <script src="extraTask.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
